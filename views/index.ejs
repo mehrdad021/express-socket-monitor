@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/bootstrap.rtl.css">
+<style>
+    progress {
+        border: 1px solid #e4e4e4;
+        border-radius: 5px;
+        height: 25px;
+        margin-bottom: 20px;
+    }
+    /*progress::-webkit-progress-value {*/
+    /*    background: mediumpurple;*/
+    /*}*/
+
+    .progress-1::-webkit-progress-value {
+        background: mediumpurple;
+    }
+    .progress-2::-webkit-progress-value {
+        background: crimson;
+    }
+    progress::-moz-progress-bar {
+        background: mediumpurple;
+    }
+    progress::-webkit-progress-bar {
+        background: #FFFFFF00;
+    }
+</style>
+<body style="" class="d-flex container-fluid">
+
+    <section class="col-12" style="height: 100% !important;">
+
+    <ul id="idChatList" class="list-group computers">
+
+
+    </ul>
+
+
+</section>
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js">-->
+<script src="/socket.io/socket.io.js"> </script>
+<script src="/bootstrap.min.js"></script>
+<script src="/index.js" type="module"></script>
+
+
+
+<script>
+
+</script>
+</body>
+
+<script>
+
+    const socket = io('http://localhost:3000')
+
+    let elmComputers = document.getElementsByClassName('computers')
+    socket.on('connect',()=>{
+        console.log("connect")
+
+        socket.emit('joinRoomMonitoring')
+        socket.on('computerDate',(data)=>{
+            let eleLiComputer = document.createElement('li')
+            eleLiComputer.id= data.id
+            // id="${data.id}"
+             eleLiComputer.innerHTML =
+                `
+                <li class="list-group-item mb-2 d-flex col-12 align-items-center" >
+
+            <div class="d-flex flex-column h-100  col-5">
+                <progress class="col-12 progress-1" style="" id="file" value="32" max="100"> 32% </progress>
+                <span style="font-size: 3rem; color: mediumpurple">
+                    32%
+                </span>
+                <progress class="col-12 progress-2" style="" id="file2" value="85" max="100"> 85% </progress>
+                <span style="font-size: 3rem; color: darkred">
+                    85%
+                </span>
+            </div>
+
+            <div class="d-flex flex-column ps-2 col-10" >
+
+                <div class="d-flex mb-2 ms-2 col-12" >
+                    <span class="fs-6 fw-bolder text-black">
+                        OP :
+                    </span>
+                    <span class="fs-6 text-black-50">
+                        w-10
+                    </span>
+                </div>
+                <div class="d-flex mb-2 ms-2 col-12" >
+                    <span class="fs-6 fw-bolder text-black">
+                        M-A :
+                    </span>
+                    <span class="fs-6 text-black-50">
+                        45-fg-f6-p9
+                    </span>
+                </div>
+                <div class="d-flex mb-2 ms-2 col-12" >
+                    <span class="fs-6 fw-bolder text-black">
+                        cpu :
+                    </span>
+                    <span class="fs-6 text-black-50">
+                        CI7-13S 5.6gh
+                    </span>
+                </div>
+                <div class="d-flex mb-2 ms-2 col-12" >
+                    <span class="fs-6 fw-bolder text-black">
+                        cpu core :
+                    </span>
+                    <span class="fs-6 text-black-50">
+                        6
+                    </span>
+                </div>
+                <div class="d-flex mb-2 ms-2 col-12" >
+                    <span class="fs-6 fw-bolder text-black">
+                        memory :
+                    </span>
+                    <span class="fs-6 text-black-50">
+                        32GB
+                    </span>
+                </div>
+            </div>
+        </li>
+                `
+
+            let li = document.getElementById(`${data.id}`)
+            if(li.length == 0){
+
+                // let eleOption = document.createElement('option')
+                // eleOption.innerHTML = itemRole.innerHTML
+                // eleOption.value =  itemRole.getAttribute('data-value')
+                // eleOption.style.cursor="pointer"
+                // eleOption.selected = true
+                eleLiComputer.appendChild( eleLiComputer)
+            }
+
+
+        })
+    })
+</script>
+</html>
+
+

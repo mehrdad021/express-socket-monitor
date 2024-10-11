@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/bootstrap.rtl.css">
+
+<body style="height: 100vh" class="d-flex container-fluid">
+
+    <section class="col-2 bg-warning bg-opacity-25">
+         <span>
+            Projects
+        </span>
+        <ul class="list-group mt-2" id="idUlProjects">
+
+        </ul>
+    </section>
+    <section class="col-3 bg-info bg-opacity-50 px-2">
+        <span>
+            Project N
+        </span>
+        <ul class="list-group mt-2" id="idUlRooms">
+        </ul>
+    </section>
+    <section class="col-7" style="height: 100% !important;">
+        <div class="d-flex flex-column justify-content-center align-items-center col-12">
+            <span class="text-center text-info fs-2 col-12 px-2 py-3 bg-secondary bg-opacity-50">
+                project manager
+            </span>
+            <span class="text-center text-info fs-2 col-12 px-2 py-3 bg-secondary bg-opacity-50" id="idSpanOnlineUsers">
+                online users
+            </span>
+            <span class="text-center text-danger fs-5 col-12 px-2 py-3 bg-secondary bg-opacity-25">
+                project manager
+            </span>
+        </div>
+    <ul id="idChatList" class="list-group" style="height: 80vb !important; overflow-y: scroll;">
+        <li class="list-group-item mb-2 d-flex col-12">
+            <span class="col-2" style="width: 50px; height: 50px; border-radius: 50px; border: 1px solid darkred; background-color: #0d6efd">
+
+            </span>
+
+            <div class="d-flex flex-column ps-2 col-10" >
+                <span class="fs-4 text-warning fw-bold">
+                    ALI
+                </span>
+                <div class="d-flex justify-content-between ms-2 col-12" >
+
+                    <span class="fs-5 text-black-50">
+                        hi ali
+                    </span>
+                    <span class="fs-5 text-black-50">
+                        10:55
+                    </span>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item mb-2 d-flex col-12">
+            <span class="col-2" style="width: 50px; height: 50px; border-radius: 50px; border: 1px solid darkred; background-color: #0d6efd">
+
+            </span>
+
+            <div class="d-flex flex-column ps-2 col-10" >
+                <span class="fs-4 text-warning fw-bold">
+                    MEHRI
+                </span>
+                <div class="d-flex justify-content-between ms-2 col-12" >
+
+                    <span class="fs-5 text-black-50">
+                        hi ali
+                    </span>
+                    <span class="fs-5 text-black-50">
+                        10:55
+                    </span>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="mt-auto col-12">
+        <input id="msgContent" type="text" style="width: 70%">
+        <input id="msgSend" type="button" style="width: 20%" value="ارسال" class="btn btn-sm btn-success ms-auto">
+    </div>
+</section>
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js">-->
+<script src="/socket.io/socket.io.js"> </script>
+<script src="/bootstrap.min.js"></script>
+<script src="/chat_tl.js" type="module"></script>
+
+
+
+<script>
+
+</script>
+</body>
+</html>
+
+
